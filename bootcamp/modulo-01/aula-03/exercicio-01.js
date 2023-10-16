@@ -8,18 +8,18 @@
     [1, 3, 5, 7, 9] -> impares
 */
 
-function separarNumeros(listaDeNumeros) {
-  let numerosImpares = [];
-  let numerosPares = [];
-  for (const numero of listaDeNumeros) {
-    numero % 2 === 0 ? numerosPares.push(numero) : numerosImpares.push(numero);
+function separarNumeros(listaNumeros) {
+  let listaNumerosImpares = [];
+  let listaNumerosPares = [];
+  for (const numero of listaNumeros) {
+    numero % 2 === 0 ? listaNumerosPares.push(numero) : listaNumerosImpares.push(numero);
   }
-  return { numerosPares, numerosImpares };
+  return { listaNumerosPares, listaNumerosImpares };
 }
 
-const listaDeNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const { numerosPares, numerosImpares } = separarNumeros(listaDeNumeros);
+const listaNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const { listaNumerosPares, listaNumerosImpares } = separarNumeros(listaNumeros);
 
-console.log("Lista de números:", listaDeNumeros);
-console.log("Números pares encontrados:", numerosPares);
-console.log("Números ímpares encontrados:", numerosImpares);
+console.log("Lista de números:", listaNumeros);
+console.log("Números pares encontrados:", listaNumerosPares);
+console.log("Números ímpares encontrados:", listaNumerosImpares);

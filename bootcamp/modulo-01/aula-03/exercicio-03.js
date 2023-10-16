@@ -4,12 +4,12 @@
 */
 
 function sortearNumerosAleatorios() {
-  const numeros = [];
-  while (numeros.length < 6) {
+  const numerosSorteados = [];
+  while (numerosSorteados.length < 6) {
     const numeroAleatorio = Math.round(Math.random() * 59) + 1;
-    if (!numeros.includes(numeroAleatorio)) numeros.push(numeroAleatorio);
+    if (!numerosSorteados.includes(numeroAleatorio)) numerosSorteados.push(numeroAleatorio);
   }
-  return numeros;
+  return numerosSorteados;
 }
 
 const numerosSorteados = sortearNumerosAleatorios();
