@@ -4,6 +4,7 @@
     e calcular a média das duas notas de cada aluno.
     Ao final, imprimir o nome do aluno e a sua média
 */
+
 const listaDeAlunos = [
   { nome: "João", notas: [8, 7] },
   { nome: "Maria", notas: [9, 8] },
