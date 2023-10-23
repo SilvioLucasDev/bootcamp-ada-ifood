@@ -34,7 +34,7 @@ const enviarEmail = (addressee, subject, body) => {
     `
   );
 
-  return { status: "Sucess", message: "E-mail enviado com sucesso!" };
+  return { status: "Success", message: "E-mail enviado com sucesso!" };
 };
 
 module.exports = enviarEmail;
