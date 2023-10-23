@@ -29,43 +29,30 @@ function createEmailBody(clientName) {
 }
 
 function sendEmail(clientList) {
-    let resultEmailList = []
+    let result = {
+        error: false,
+        list: []
+    }
     for (const client of clientList) {
         const emailBody = createEmailBody(client.name)
-        const result = sendEmailAdapter(client.email, EMAIL_SUBJECT, emailBody)
-        resultEmailList.push({
+        const sendEmailResult = sendEmailAdapter(client.email, EMAIL_SUBJECT, emailBody)
+        result.list.push({
             name: client.name,
             email: client.email,
-            status: result.status,
-            message: result.message
+            status: sendEmailResult.status,
+            message: sendEmailResult.message
         });
     }
-    return resultEmailList
-}
-
-function displayResult(resultEmailList) {
-    console.log(`
-            --------------------------------
-            | RESULTADO DO ENVIO DE E-MAILS |
-            --------------------------------
-        `)
-    for (const result of resultEmailList) {
-        console.log(`
-            Cliente: ${result.name}
-            Email: ${result.email}
-            Status: ${result.status}
-            Mensagem: ${result.message}
-        `)
-    }
+    return result
 }
 
 function sendEmailMarketingService() {
     clientList = clientRepository.findClientsVisitedLastMonthAndEmailMarketingTrue()
     if (isMonday() && clientList.length > 0) {
-        resultEmailList = sendEmail(clientList)
-        displayResult(resultEmailList)
+        return sendEmail(clientList)
     } else {
-        console.log(`\nErro: Nenhum e-mail foi enviado.\n`);
+        return { error: true, message: `\n                Nenhum e-mail foi enviado.\n` }
     }
 }
-sendEmailMarketingService()
+
+module.exports = sendEmailMarketingService
