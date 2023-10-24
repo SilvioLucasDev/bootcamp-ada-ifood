@@ -36,9 +36,7 @@ const edit = ({ editOption, id, description, deadline }) => {
 
 const remove = (id) => {
 	const index = tasksDb.findIndex((task) => task.id === id)
-	if (index !== -1) {
-		tasksDb.splice(index, 1)
-	}
+	tasksDb.splice(index, 1)
 }
 
 module.exports = {
