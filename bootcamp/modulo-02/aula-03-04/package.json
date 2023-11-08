@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Primeiro projeto TS da turma 1090",
   "scripts": {
-    "start": "tsc && node dist/index"
+    "start": "rm -rf dist && tsc && node dist/index"
   },
   "license": "MIT",
   "devDependencies": {

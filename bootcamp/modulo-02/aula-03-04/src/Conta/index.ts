@@ -3,7 +3,6 @@ export class Conta {
     public conta: number // static
     private _saldo: number
 
-
     constructor(conta: number, saldo: number = 0) {
         this.conta = conta
         this._saldo = saldo
