@@ -14,13 +14,9 @@ export class ContaEspecial extends Conta {
 
     extrato(): string {
         return `
-            **** Extrato ****
-            Agencia: ${this.agencia}
-            Conta ${this.conta}
-            -----------------
-            Saldo: ${this.saldo}
+            ${super.extrato()}
             Limite: ${this._limite}
-            Saldo total: ${this.saldo + this._limite}
+            Saldo + Limite: ${this._saldo + this._limite}
         `
     }
 }

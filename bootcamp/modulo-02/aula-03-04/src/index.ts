@@ -9,6 +9,6 @@ console.log(conta.extrato());
 console.log('\n');
 
 
-const contaEspecial = new ContaEspecial(++numeroConta, 1000, 2000)
+const contaEspecial = new ContaEspecial(++numeroConta, 1000, 3000)
 
 console.log(contaEspecial.extrato());
