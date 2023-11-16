@@ -1,0 +1,13 @@
+{
+  "name": "aula-03",
+  "version": "1.0.0",
+  "description": "Primeiro projeto TS da turma 1090",
+  "scripts": {
+    "start": "rm -rf dist && tsc && node dist/index",
+    "view": "node dist/index"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "5.2.2"
+  }
+}
