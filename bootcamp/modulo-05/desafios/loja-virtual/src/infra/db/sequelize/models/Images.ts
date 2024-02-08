@@ -1,8 +1,7 @@
 import { DataTypes } from 'sequelize'
 import { sequelize } from '..'
-import { ImageModel } from './Images';
 
-const ProductModel = sequelize.define('products', {
+const ImageModel = sequelize.define('images', {
   id: {
     type: DataTypes.STRING,
     primaryKey: true
@@ -11,17 +10,17 @@ const ProductModel = sequelize.define('products', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  price: {
+  type: {
     type: DataTypes.FLOAT,
     allowNull: false
   },
-  id_image: {
+  path: {
     type: DataTypes.STRING,
-    allowNull: false,
-    references: {
-      model: 'images',
-      key: 'id'
-    }
+    allowNull: false
+  },
+  size: {
+    type: DataTypes.INTEGER,
+    allowNull: false
   }
 },
   {
@@ -29,6 +28,4 @@ const ProductModel = sequelize.define('products', {
   }
 )
 
-ProductModel.belongsTo(ImageModel, { foreignKey: 'id_image' });
-
-export { ProductModel }
+export { ImageModel }

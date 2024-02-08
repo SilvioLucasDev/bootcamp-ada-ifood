@@ -9,7 +9,7 @@ export interface IProductResponse {
   id: string;
   name: string;
   price: string;
-  id_image: string;
+  image: any;
 }
 
 export interface IProductsRepository {
